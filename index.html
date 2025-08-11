@@ -59,13 +59,23 @@
 	</header>
 
 	<main>
-		<section id="about">
-			<h2>About Me</h2>
-			<p>Hello! I'm a Master student in Economics at Seoul National University. My research interest primarily lies on applied microeconomics and applied econometrics. </p>
-		</section>
+		<style>
+			  .hero { display:flex; align-items:center; gap:24px; }
+			  .hero img { max-width:260px; height:auto; margin-left:auto; } 
+			@media (max-width: 640px){
+			  .hero { flex-direction:column; text-align:center; }
+			  .hero img { margin:0 auto; } /* 모바일: 중앙 */
+			  }
+			</style>
+			
+			<div class="hero">
+			  <div>
+			    <h2>Hi! I am a master student in economics at Seoul National University.</h2>
+			    <p> My research interest primarily lies in applied microeconomics (labor, health) and applied econometrics. </p></p>
+			  </div>
+			  <img src="images/figure.jpg" alt="profile">
+			</div>
 
-		<img src="images/figure.jpg" alt="me" style="max-width:100%; height:auto; display:block;">
-		
 		<section id="contact">
 			<h2>Contact</h2>
 			<p>Email: <a href="mailto:rmg0105@snu.ac.kr">rmg0105@snu.ac.kr </a></p>
