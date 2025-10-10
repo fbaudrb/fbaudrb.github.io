@@ -169,4 +169,56 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const toggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+
+  // 테마 적용 함수
+  const applyTheme = (mode) => {
+    if (mode === 'light') {
+      root.setAttribute('data-theme', 'light');
+      const lightVars = {
+        '--bg': '#f7f8fb',
+        '--bg-soft': '#ffffff',
+        '--card': '#ffffff',
+        '--text': '#0f172a',
+        '--muted': '#475569',
+        '--brand': '#3b82f6',
+        '--brand-2': '#7c3aed',
+        '--badge-bg': 'rgba(59,130,246,0.1)',
+        '--shadow': '0 10px 25px rgba(2,6,23,0.08)'
+      };
+      for (const k in lightVars) root.style.setProperty(k, lightVars[k]);
+    } else {
+      root.setAttribute('data-theme', 'dark');
+      const darkVars = {
+        '--bg': '#0b1020',
+        '--bg-soft': '#111631',
+        '--card': '#151a3a',
+        '--text': '#f5f7ff',
+        '--muted': '#c5cae9',
+        '--brand': '#7aa2ff',
+        '--brand-2': '#a78bfa',
+        '--badge-bg': 'rgba(122,162,255,0.2)',
+        '--shadow': '0 10px 30px rgba(0,0,0,0.35)'
+      };
+      for (const k in darkVars) root.style.setProperty(k, darkVars[k]);
+    }
+  };
+
+  // 저장된 테마 불러오기
+  const saved = localStorage.getItem('theme');
+  if (saved) applyTheme(saved);
+
+  // 클릭 시 전환
+  toggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    const next = (current === 'light') ? 'dark' : 'light';
+    localStorage.setItem('theme', next);
+    applyTheme(next);
+  });
+</script>
 </html>
