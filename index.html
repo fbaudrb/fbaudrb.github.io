@@ -12,6 +12,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+  /* Light mode 전용: 연회색 헤더 */
+:root[data-theme="light"] header {
+  background: rgba(245, 247, 250, 0.95); /* #f5f7fa 근처 톤 */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: #0f172a;
+}
+:root[data-theme="light"] .nav a {
+  color: #0f172a;
+}
+:root[data-theme="light"] .brand .badge {
+  background: rgba(15, 23, 42, 0.06);
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+}
+
     :root {
       --bg: #0b1020;
       --bg-soft: #111631;
