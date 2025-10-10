@@ -1,92 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ryu Myeonggyu</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			background-color: #f4f4f4;
-			color: #333;
-		}
-		header {
-			background-color: #333;
-			color: white;
-			padding: 1rem;
-			text-align: center;
-		}
-		nav a {
-			color: white;
-			margin: 0 15px;
-			text-decoration: none;
-			font-weight: bold;
-		}
-		nav a:hover {
-			text-decoration: underline;
-		}
-		main {
-			padding: 2rem;
-			max-width: 900px;
-			margin: auto;
-		}
-		section {
-			margin-bottom: 2rem;
-		}
-		footer {
-			background-color: #333;
-			color: white;
-			text-align: center;
-			padding: 1rem;
-			position: fixed;
-			bottom: 0;
-			width: 100%;
-		}
-	</style>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ryu Myeonggyu – Economics (Applied Micro: Labor & Health). Master's student at Seoul National University." />
+  <title>Ryu Myeonggyu</title>
+
+  <!-- Inter font (fast, widely supported) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #111631;
+      --card: #151a3a;
+      --text: #f5f7ff;
+      --muted: #c5cae9;
+      --brand: #7aa2ff;  /* primary */
+      --brand-2: #a78bfa; /* accent */
+      --ring: rgba(122,162,255,0.35);
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 16px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f8fb;
+        --bg-soft: #ffffff;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --brand: #3b82f6;
+        --brand-2: #7c3aed;
+        --ring: rgba(59,130,246,0.25);
+        --shadow: 0 10px 25px rgba(2,6,23,0.08);
+      }
+    }
+
+    /* Base */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Container */
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(17, 22, 49, 0.65);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: 0.2px; }
+    .badge { font-size: 12px; padding: 2px 8px; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; color: var(--muted); }
+    .nav a { color: var(--text); font-weight: 600; opacity: 0.9; }
+    .nav .links { display: flex; gap: 18px; align-items:center; }
+
+    /* Theme toggle */
+    .toggle {
+      border: 1px solid rgba(255,255,255,0.14);
+      background: transparent; color: var(--text);
+      border-radius: 999px; padding: 6px 10px; cursor: pointer; font-weight: 600;
+    }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 36px; align-items: center; padding: 56px 0 28px; }
+    .hero h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.15; margin: 0 0 8px; }
+    .hero p { color: var(--muted); margin: 0 0 18px; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.14); background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      box-shadow: var(--shadow); color: var(--text);
+    }
+    .btn.primary { border-color: transparent; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: white; }
+    .btn:hover { transform: translateY(-1px); transition: transform 160ms ease; }
+
+    .portrait-wrap { position: relative; }
+    .glow {
+      position:absolute; inset:-18px; border-radius: 50%; filter: blur(26px); opacity: .7;
+      background: radial-gradient(60% 60% at 40% 40%, var(--brand) 0%, rgba(122,162,255,0.0) 70%),
+                  radial-gradient(40% 40% at 70% 60%, var(--brand-2) 0%, rgba(167,139,250,0.0) 80%);
+      pointer-events: none;
+    }
+    .portrait {
+      width: 270px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%;
+      border: 6px solid rgba(255,255,255,0.12); box-shadow: var(--shadow);
+      display: block; margin: 0 auto;
+    }
+
+    /* Sections */
+    section { margin: 28px 0; }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: clamp(18px, 3vw, 28px);
+    }
+    .card h2 { margin-top: 0; margin-bottom: 8px; }
+    .meta { color: var(--muted); font-size: 14px; }
+
+    /* Footer */
+    footer { margin: 48px 0 24px; color: var(--muted); text-align: center; font-size: 14px; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .cta { justify-content: center; }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Main Navigation">
+      <div class="brand">
+        <span>Ryu Myeonggyu</span>
+        <span class="badge">Economics</span>
+      </div>
+      <div class="links">
+        <a href="misc/misc.html">Misc</a>
+        <a href="pdfs/CV_Ryu.pdf" target="_blank" rel="noopener">CV</a>
+        <button class="toggle" id="themeToggle" aria-label="Toggle theme">🌗</button>
+      </div>
+    </div>
+  </header>
 
-	<header>
-		<h1>Ryu Myeonggyu</h1>
-		<nav>
-			<a href="misc/misc.html">Miscellaneous</a>
-			<a href="pdfs/CV_Ryu.pdf" target="_blank" rel="noopener">CV</a>
-		</nav>
-	</header>
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero" id="about">
+      <div>
+        <h1>Applied Micro &amp; Econometrics</h1>
+        <p>
+          I'm a Master's student in Economics at <strong>Seoul National University</strong>. I received my B.A. in Economics and B.S. in Mathematics at SNU in 2025.
+          My research interests are in <strong>applied microeconomics</strong> — especially labor and health — and <strong>applied econometrics</strong>.
+        </p>
+        <p class="meta">Currently in a pre‑doc course with the <a href="https://sites.google.com/view/hflecon/home" target="_blank" rel="noopener">Health‑Family‑Labor Economics team</a>.</p>
+        <div class="cta">
+          <a class="btn primary" href="pdfs/CV_Ryu.pdf" target="_blank" rel="noopener">↗ Open CV</a>
+          <a class="btn" href="mailto:rmg0105@snu.ac.kr">✉ Email</a>
+          <a class="btn" href="misc/misc.html">⋯ Misc</a>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <div class="glow" aria-hidden="true"></div>
+        <img class="portrait" src="images/figure.jpg" alt="Portrait of Ryu Myeonggyu" />
+      </div>
+    </section>
 
-	<main>
-		<style>
-			  .hero { display:flex; align-items:center; gap:24px; }
-			  .hero img { max-width:260px; height:auto; margin-left:auto; } 
-			@media (max-width: 640px){
-			  .hero { flex-direction:column; text-align:center; }
-			  .hero img { margin:0 auto; } /* 모바일: 중앙 */
-			  }
-			</style>
-			
-			<div class="hero">
-			  <div>
-			    <h2>About Me </h2>
-			    <p> Hi! I am a Master's student in economics at Seoul National University. I received my B.A in economics and B.S in Mathematics from Seoul
-					national university in 2025. </p>
-				<p>	My research interest primarily lies in applied microeconomics (labor, health) and applied econometrics. </p></p>
-				<p> I am under a predoc course in <a href="https://sites.google.com/view/hflecon/home">health-family-labor econ. research team</a>.</p>
-			  </div>
-			  <img src="images/figure.jpg" alt="profile">
-			</div>
+    <!-- Contact -->
+    <section id="contact" class="card" aria-label="Contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:rmg0105@snu.ac.kr">rmg0105@snu.ac.kr</a></p>
+    </section>
 
-		<section id="contact">
-			<h2>Contact</h2>
-			<p>Email: <a href="mailto:rmg0105@snu.ac.kr">rmg0105@snu.ac.kr </a></p>
-		</section>
-	</main>
+    <!-- Optional: Quick Links / Featured -->
+    <section class="card" aria-label="Quick Links">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="pdfs/CV_Ryu.pdf" target="_blank" rel="noopener">Curriculum Vitae</a></li>
+        <li><a href="misc/misc.html">Miscellaneous notes</a></li>
+      </ul>
+    </section>
 
-	<footer>
-		&copy; 2025 My Portfolio
-	</footer>
+    <footer>
+      © <span id="year"></span> Ryu Myeonggyu. All rights reserved.
+    </footer>
+  </main>
 
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle (persist choice)
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+
+    // We simulate dark/light by flipping a data attribute that swaps vars
+    const applyTheme = (mode) => {
+      if (mode === 'light') {
+        root.setAttribute('data-theme', 'light');
+        // Force light palette by overriding prefers-color-scheme with CSS vars
+        const lightVars = {
+          '--bg': '#f7f8fb', '--bg-soft': '#ffffff', '--card': '#ffffff', '--text': '#0f172a', '--muted': '#475569', '--brand': '#3b82f6', '--brand-2': '#7c3aed', '--ring': 'rgba(59,130,246,0.25)', '--shadow': '0 10px 25px rgba(2,6,23,0.08)'
+        };
+        for (const k in lightVars) root.style.setProperty(k, lightVars[k]);
+      } else {
+        root.setAttribute('data-theme', 'dark');
+        const darkVars = {
+          '--bg': '#0b1020', '--bg-soft': '#111631', '--card': '#151a3a', '--text': '#f5f7ff', '--muted': '#c5cae9', '--brand': '#7aa2ff', '--brand-2': '#a78bfa', '--ring': 'rgba(122,162,255,0.35)', '--shadow': '0 10px 30px rgba(0,0,0,0.35)'
+        };
+        for (const k in darkVars) root.style.setProperty(k, darkVars[k]);
+      }
+    };
+
+    const saved = localStorage.getItem('theme');
+    if (saved) applyTheme(saved);
+
+    toggle.addEventListener('click', () => {
+      const mode = (root.getAttribute('data-theme') === 'light') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
+      applyTheme(mode);
+    });
+  </script>
+
+  <!--
+    Analytics (optional):
+    Paste your provider snippet here (e.g., Google Analytics, Plausible).
+    Example (Plausible):
+    <script defer data-domain="yourdomain.github.io" src="https://plausible.io/js/script.js"></script>
+  -->
 </body>
 </html>
