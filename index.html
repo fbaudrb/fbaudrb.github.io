@@ -6,7 +6,7 @@
   <meta name="description" content="Myeonggyu Ryu, M.A. student in Economics at Seoul National University. Research in labor economics, family economics, applied microeconomics, and microeconometrics.">
   <meta name="color-scheme" content="light dark">
   <meta property="og:title" content="Myeonggyu Ryu | Economics">
-  <meta property="og:description" content="Economics at Seoul National University. Research, CV, and writing sample.">
+  <meta property="og:description" content="Economics at Seoul National University. Research, CV, and working paper.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://fbaudrb.github.io/">
   <link rel="canonical" href="https://fbaudrb.github.io/">
@@ -111,12 +111,6 @@
     .paper-summary { max-width: 900px; color: var(--muted); }
     .paper-links { margin-top: 14px; }
     .paper-links a { font-weight: 600; }
-    .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .two-column .card { margin-top: 0; }
-    .entry + .entry { margin-top: 24px; }
-    .entry h3 { font-size: 17px; }
-    .entry p { margin-bottom: 6px; }
-    .entry-description { color: var(--muted); }
     .teaching-list { list-style: none; padding: 0; margin: 0; }
     .teaching-list li { display: flex; justify-content: space-between; gap: 20px; padding: 12px 0; border-top: 1px solid var(--border); }
     .teaching-list li:first-child { border-top: 0; padding-top: 0; }
@@ -128,7 +122,6 @@
       .portrait-wrap { grid-row: 1; }
       .portrait { width: 210px; }
       .cta { justify-content: center; }
-      .two-column { grid-template-columns: 1fr; gap: 0; }
     }
     @media (max-width: 640px) {
       html { scroll-padding-top: 145px; }
@@ -148,7 +141,6 @@
       body { background: #fff; color: #000; }
       .hero { display: block; padding-top: 0; }
       .card { box-shadow: none; break-inside: avoid; }
-      .two-column { display: block; }
     }
   </style>
 </head>
@@ -163,7 +155,6 @@
       <div class="links">
         <a href="#research">Research</a>
         <a href="pdfs/CV.pdf" target="_blank" rel="noopener">CV</a>
-        <a href="pdfs/Writing_Sample.pdf" target="_blank" rel="noopener">Writing Sample</a>
         <a href="misc/misc.html">Misc</a>
         <button class="toggle" id="themeToggle" type="button" aria-label="Switch color theme" title="Switch color theme" hidden>
           <svg class="moon-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg>
@@ -182,7 +173,7 @@
         <p>I study how labor markets and household formation shape earnings inequality, using linked administrative data. I also work with the <a href="https://sites.google.com/view/hflecon/home" target="_blank" rel="noopener">Health-Family-Labor Economics research team</a>.</p>
         <div class="cta">
           <a class="btn primary" href="pdfs/CV.pdf" target="_blank" rel="noopener">Curriculum Vitae</a>
-          <a class="btn" href="pdfs/Writing_Sample.pdf" target="_blank" rel="noopener">Writing Sample</a>
+          <a class="btn" href="pdfs/Writing_Sample.pdf" target="_blank" rel="noopener">Working Paper</a>
           <a class="btn" href="mailto:rmg0105@snu.ac.kr">Email</a>
         </div>
       </div>
@@ -198,7 +189,7 @@
         <h3>High Wage Workers, High Wage Firms, and Spousal Sorting</h3>
         <p class="paper-meta">with Jungmin Lee</p>
         <p class="paper-summary">Using linked employer-employee and population data from South Korea, we study assortative mating on worker earnings potential and firm wage premiums. Spouses sort positively on both components, even among couples who have never worked at the same firm. A transferable-utility matching model implies that, without firm-related complementarities, the Gini coefficient of predicted household earnings would be 6.2 percent lower.</p>
-        <p class="paper-links"><a href="pdfs/Writing_Sample.pdf" target="_blank" rel="noopener">Writing Sample (PDF)</a></p>
+        <p class="paper-links"><a href="pdfs/Writing_Sample.pdf" target="_blank" rel="noopener">Working Paper (PDF)</a></p>
       </article>
       <article class="paper">
         <p class="category">Work in Progress</p>
@@ -207,37 +198,6 @@
         <p class="paper-summary">We use linked employer-employee data and an AKM model to examine changes in earnings inequality in South Korea, focusing on the role of firm wage premium dispersion in the decline after 2020.</p>
       </article>
     </section>
-
-    <div class="two-column">
-      <section class="card" aria-labelledby="education-title">
-        <h2 id="education-title">Education</h2>
-        <div class="entry">
-          <h3>Seoul National University</h3>
-          <p>M.A. in Economics</p>
-          <p class="meta">March 2025 - present</p>
-          <p class="entry-description">Admitted with distinction</p>
-        </div>
-        <div class="entry">
-          <h3>Seoul National University</h3>
-          <p>B.A. in Economics; B.S. in Mathematics</p>
-          <p class="meta">February 2025</p>
-          <p class="entry-description">Economics: summa cum laude<br>Combined minor in Financial Economics</p>
-        </div>
-      </section>
-      <section class="card" aria-labelledby="experience-title">
-        <h2 id="experience-title">Research Experience</h2>
-        <div class="entry">
-          <h3>Research Assistant</h3>
-          <p class="meta">March 2025 - present</p>
-          <p>For Youjin Hahn, Jisoo Hwang, and Hyuncheol Bryant Kim</p>
-          <p class="entry-description">Policy evaluation of Korea's couple-based parental leave incentives using National Health Insurance Service administrative data. Contributions include sample construction, identification and inference strategies, empirical analysis, and report writing.</p>
-        </div>
-        <div class="entry">
-          <h3>Health-Family-Labor Economics Research Team</h3>
-          <p class="meta">December 2024 - present</p>
-        </div>
-      </section>
-    </div>
 
     <section class="card" aria-labelledby="teaching-title">
       <h2 id="teaching-title">Teaching</h2>
