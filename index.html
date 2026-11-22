@@ -1,217 +1,274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Ryu Myeonggyu – Economics (Applied Micro (Labor)). Master's student at Seoul National University." />
-  <title> Ryu Myeonggyu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Myeonggyu Ryu, M.A. student in Economics at Seoul National University. Research in labor economics, family economics, applied microeconomics, and microeconometrics.">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="Myeonggyu Ryu | Economics">
+  <meta property="og:description" content="Economics at Seoul National University. Research, CV, and writing sample.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fbaudrb.github.io/">
+  <link rel="canonical" href="https://fbaudrb.github.io/">
+  <title>Myeonggyu Ryu | Economics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    (() => {
+      let saved;
+      try { saved = localStorage.getItem('theme'); } catch (_) {}
+      document.documentElement.dataset.theme = saved === 'light' || saved === 'dark'
+        ? saved : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    })();
+  </script>
   <style>
     :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --bg-soft: #ffffff;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --brand: #245dcc;
+      --brand-2: #7040c8;
+      --badge-bg: rgba(59,130,246,.09);
+      --border: rgba(15,23,42,.12);
+      --header: rgba(230,242,255,.94);
+      --shadow: 0 8px 25px rgba(2,6,23,.055);
+      --radius: 16px;
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
       --bg: #0b1020;
       --bg-soft: #111631;
       --card: #151a3a;
       --text: #f5f7ff;
       --muted: #c5cae9;
-      --brand: #7aa2ff;
-      --brand-2: #a78bfa;
-      --badge-bg: rgba(122,162,255,0.2);
-      --shadow: 0 10px 30px rgba(0,0,0,0.35);
-      --radius: 16px;
+      --brand: #99b8ff;
+      --brand-2: #c2a8ff;
+      --badge-bg: rgba(122,162,255,.14);
+      --border: rgba(255,255,255,.14);
+      --header: rgba(17,22,49,.94);
+      --shadow: 0 10px 30px rgba(0,0,0,.2);
     }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f7f8fb;
-        --bg-soft: #ffffff;
-        --card: #ffffff;
-        --text: #0f172a;
-        --muted: #475569;
-        --brand: #3b82f6;
-        --brand-2: #7c3aed;
-        --badge-bg: rgba(59,130,246,0.1);
-        --shadow: 0 10px 25px rgba(2,6,23,0.08);
-      }
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 100px; }
     body {
       margin: 0;
       font-family: "Inter", system-ui, sans-serif;
-      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      font-size: 16px;
+      line-height: 1.7;
+      background: linear-gradient(180deg, var(--bg), var(--bg-soft));
       color: var(--text);
     }
-    a { color: var(--brand); text-decoration: none; }
+    a { color: var(--brand); text-decoration-thickness: 1px; text-underline-offset: .2em; }
     a:hover { text-decoration: underline; }
-
-    .container { width: min(1100px, 92%); margin: 0 auto; }
-
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--brand); outline-offset: 5px; }
+    button { font: inherit; }
+    [hidden] { display: none !important; }
+    p { margin: 0 0 16px; }
+    h1, h2, h3 { line-height: 1.3; }
+    h2 { font-size: 24px; margin: 0 0 24px; letter-spacing: -.025em; }
+    h3 { font-size: 19px; margin: 0 0 8px; font-weight: 600; }
+    .container { width: min(1100px, 92%); margin-inline: auto; }
+    .skip-link { position: absolute; top: -70px; left: 16px; padding: 8px 14px; z-index: 100; background: var(--card); }
+    .skip-link:focus { top: 8px; }
     header {
       position: sticky; top: 0; z-index: 50;
-      background: rgba(17,22,49,0.65);
+      background: var(--header);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      transition: background 0.3s ease;
+      border-bottom: 1px solid var(--border);
     }
-
-    /* Light mode 전용: 연한 하늘색 헤더 */
-    :root[data-theme="light"] header {
-      background: rgba(230, 242, 255, 0.9);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      color: #0f172a;
-    }
-    :root[data-theme="light"] .nav a {
-      color: #0f172a;
-    }
-    :root[data-theme="light"] .brand .badge {
-      background: rgba(59, 130, 246, 0.12);
-      color: #1e40af;
-      border: 1px solid rgba(59, 130, 246, 0.35);
-    }
-
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
-    .brand { display: flex; align-items: baseline; gap: 10px; font-weight: 700; }
-    .brand .title { font-size: 1.1rem; }
-    .badge {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--brand);
-      background-color: var(--badge-bg);
-      border-radius: 12px;
-      padding: 2px 10px;
-      border: 1px solid var(--brand);
-    }
-
-    .nav .links { display: flex; gap: 18px; align-items:center; }
-    .nav a { color: var(--text); font-weight: 600; opacity: 0.9; }
-
-    .toggle {
-      border: 1px solid rgba(255,255,255,0.14);
-      background: transparent; color: var(--text);
-      border-radius: 999px; padding: 6px 10px; cursor: pointer; font-weight: 600;
-    }
-
-    .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 36px; align-items: center; padding: 56px 0 28px; }
-    .hero h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.15; margin: 0 0 8px; }
-    .hero p { color: var(--muted); margin: 0 0 18px; }
-    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; font-weight: 600;
-      border: 1px solid rgba(255,255,255,0.14); background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      box-shadow: var(--shadow); color: var(--text);
-    }
-    .btn.primary { border-color: transparent; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: white; }
-    .btn:hover { transform: translateY(-1px); transition: transform 160ms ease; }
-
-    .portrait-wrap { text-align:center; }
-    .portrait {
-      width: 270px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%;
-      border: 6px solid rgba(255,255,255,0.12); box-shadow: var(--shadow);
-    }
-
-    section { margin: 28px 0; }
-    .card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.10);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      padding: clamp(18px, 3vw, 28px);
-    }
-
-    footer { margin: 48px 0 24px; color: var(--muted); text-align: center; font-size: 14px; }
-
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 14px; }
+    .brand { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .brand-name { color: var(--text); font-size: 18px; font-weight: 700; text-decoration: none; }
+    .badge { font-size: 14px; font-weight: 600; color: var(--brand); background: var(--badge-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1px 10px; }
+    .links { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .links a { font-size: 14px; font-weight: 600; color: var(--text); text-decoration: none; }
+    .links a:hover { text-decoration: underline; }
+    .toggle { width: 38px; height: 38px; display: grid; place-items: center; color: var(--text); border: 1px solid var(--border); background: var(--card); border-radius: 50%; cursor: pointer; }
+    .toggle svg { width: 19px; height: 19px; }
+    .sun-icon { display: none; }
+    :root[data-theme="dark"] .sun-icon { display: block; }
+    :root[data-theme="dark"] .moon-icon { display: none; }
+    .hero { display: grid; grid-template-columns: 1.4fr .6fr; gap: 48px; align-items: center; padding: 62px 0 38px; }
+    .hero h1 { font-size: clamp(34px, 4.5vw, 48px); letter-spacing: -.04em; margin: 0 0 8px; }
+    .affiliation { font-size: 17px; font-weight: 500; margin-bottom: 24px; }
+    .hero p:not(.affiliation) { color: var(--muted); }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 17px; border-radius: 12px; font-weight: 600; border: 1px solid var(--border); background: var(--card); color: var(--text); text-decoration: none; }
+    .btn.primary { border-color: transparent; background: linear-gradient(135deg, #245dcc, #7040c8); color: #fff; }
+    .btn:hover { transform: translateY(-1px); transition: transform 160ms ease; text-decoration: none; }
+    .portrait-wrap { text-align: center; }
+    .portrait { display: block; width: min(270px, 100%); height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 6px solid var(--border); box-shadow: var(--shadow); margin-inline: auto; }
+    .card { background: var(--card); border: 1px solid var(--border); box-shadow: var(--shadow); border-radius: var(--radius); padding: clamp(22px, 3vw, 32px); margin: 24px 0; }
+    .paper + .paper { border-top: 1px solid var(--border); padding-top: 28px; margin-top: 28px; }
+    .category { color: var(--brand); font-size: 14px; font-weight: 600; margin-bottom: 9px; }
+    .paper-meta, .meta { color: var(--muted); font-size: 14px; }
+    .paper-meta { margin-bottom: 14px; }
+    .paper p:last-child { margin-bottom: 0; }
+    .paper-summary { max-width: 900px; color: var(--muted); }
+    .paper-links { margin-top: 14px; }
+    .paper-links a { font-weight: 600; }
+    .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .two-column .card { margin-top: 0; }
+    .entry + .entry { margin-top: 24px; }
+    .entry h3 { font-size: 17px; }
+    .entry p { margin-bottom: 6px; }
+    .entry-description { color: var(--muted); }
+    .teaching-list { list-style: none; padding: 0; margin: 0; }
+    .teaching-list li { display: flex; justify-content: space-between; gap: 20px; padding: 12px 0; border-top: 1px solid var(--border); }
+    .teaching-list li:first-child { border-top: 0; padding-top: 0; }
+    .teaching-list .meta { white-space: nowrap; }
+    footer { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 16px 0 32px; color: var(--muted); font-size: 14px; }
+    footer p { margin: 0; }
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; text-align: center; }
+      .hero { grid-template-columns: 1fr; gap: 30px; text-align: center; padding-top: 38px; }
+      .portrait-wrap { grid-row: 1; }
+      .portrait { width: 210px; }
       .cta { justify-content: center; }
+      .two-column { grid-template-columns: 1fr; gap: 0; }
+    }
+    @media (max-width: 640px) {
+      html { scroll-padding-top: 145px; }
+      .nav { flex-wrap: wrap; gap: 9px; padding-block: 10px; }
+      .brand { width: 100%; }
+      .links { width: 100%; justify-content: space-between; gap: 8px; }
+      .hero { padding-top: 30px; }
+      .portrait { width: 180px; }
+      .hero h1 { font-size: 36px; }
+      h2 { font-size: 22px; }
+      .teaching-list li { flex-direction: column; gap: 3px; }
+      footer { flex-direction: column; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .btn:hover { transform: none; transition: none; } }
+    @media print {
+      header, .skip-link, .portrait-wrap, .toggle { display: none; }
+      body { background: #fff; color: #000; }
+      .hero { display: block; padding-top: 0; }
+      .card { box-shadow: none; break-inside: avoid; }
+      .two-column { display: block; }
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header>
-    <div class="container nav">
+    <nav class="container nav" aria-label="Main navigation">
       <div class="brand">
-        <span class="title">Ryu Myeonggyu</span>
+        <a class="brand-name" href="./">Myeonggyu Ryu</a>
         <span class="badge">Economics</span>
       </div>
       <div class="links">
-        <a href="misc/misc.html">Misc</a>
+        <a href="#research">Research</a>
         <a href="pdfs/CV.pdf" target="_blank" rel="noopener">CV</a>
-        <button class="toggle" id="themeToggle">🌗</button>
+        <a href="pdfs/Writing_Sample.pdf" target="_blank" rel="noopener">Writing Sample</a>
+        <a href="misc/misc.html">Misc</a>
+        <button class="toggle" id="themeToggle" type="button" aria-label="Switch color theme" title="Switch color theme" hidden>
+          <svg class="moon-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg>
+          <svg class="sun-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        </button>
       </div>
-    </div>
+    </nav>
   </header>
 
-  <main class="container">
-    <section class="hero">
+  <main class="container" id="main">
+    <section class="hero" aria-labelledby="name">
       <div>
-        <h1>Applied Micro &amp; Econometrics</h1>
-        <p>
-          Hi! I'm a Master's student in Economics at <strong>Seoul National University (SNU)</strong>. I received my B.A. in Economics and B.S. in Mathematics at SNU in 2025.
-          My research interests are in <strong>labor economics and applied econometrics</strong>.
-        </p>
-        <p class="meta">Currently in a pre-doc course with the <a href="https://sites.google.com/view/hflecon/home" target="_blank" rel="noopener">Health-Family-Labor Economics team</a>.</p>
+        <h1 id="name">Myeonggyu Ryu</h1>
+        <p class="affiliation">M.A. Student in Economics<br>Seoul National University</p>
+        <p>Welcome! I am a master's student in Economics at Seoul National University. My research interests are in <strong>labor economics, family economics, applied microeconomics, and microeconometrics</strong>.</p>
+        <p>I study how labor markets and household formation shape earnings inequality, using linked administrative data. I also work with the <a href="https://sites.google.com/view/hflecon/home" target="_blank" rel="noopener">Health-Family-Labor Economics research team</a>.</p>
         <div class="cta">
-          <a class="btn primary" href="pdfs/CV.pdf" target="_blank" rel="noopener">↗ Open CV</a>
-          <a class="btn" href="mailto:rmg0105@snu.ac.kr">✉ Email</a>
-          <a class="btn" href="misc/misc.html">⋯ Misc</a>
+          <a class="btn primary" href="pdfs/CV.pdf" target="_blank" rel="noopener">Curriculum Vitae</a>
+          <a class="btn" href="pdfs/Writing_Sample.pdf" target="_blank" rel="noopener">Writing Sample</a>
+          <a class="btn" href="mailto:rmg0105@snu.ac.kr">Email</a>
         </div>
       </div>
       <div class="portrait-wrap">
-        <img class="portrait" src="images/figure_ai2.png" alt="Portrait of Ryu Myeonggyu" />
+        <img class="portrait" src="images/figure_ai2.png" alt="Portrait of Myeonggyu Ryu" width="270" height="270">
       </div>
     </section>
 
-    <section id="contact" class="card">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:rmg0105@snu.ac.kr">rmg0105@snu.ac.kr</a></p>
+    <section id="research" class="card" aria-labelledby="research-title">
+      <h2 id="research-title">Research</h2>
+      <article class="paper">
+        <p class="category">Working Paper</p>
+        <h3>High Wage Workers, High Wage Firms, and Spousal Sorting</h3>
+        <p class="paper-meta">with Jungmin Lee</p>
+        <p class="paper-summary">Using linked employer-employee and population data from South Korea, we study assortative mating on worker earnings potential and firm wage premiums. Spouses sort positively on both components, even among couples who have never worked at the same firm. A transferable-utility matching model implies that, without firm-related complementarities, the Gini coefficient of predicted household earnings would be 6.2 percent lower.</p>
+        <p class="paper-links"><a href="pdfs/Writing_Sample.pdf" target="_blank" rel="noopener">Writing Sample (PDF)</a></p>
+      </article>
+      <article class="paper">
+        <p class="category">Work in Progress</p>
+        <h3>Earnings Inequality in South Korea: Evidence from Linked Employer-Employee Data</h3>
+        <p class="paper-meta">with Jungmin Lee</p>
+        <p class="paper-summary">We use linked employer-employee data and an AKM model to examine changes in earnings inequality in South Korea, focusing on the role of firm wage premium dispersion in the decline after 2020.</p>
+      </article>
     </section>
 
-    <section class="card">
-      <h2>Quick Links</h2>
-      <ul>
-        <li><a href="pdfs/CV.pdf" target="_blank" rel="noopener">Curriculum Vitae</a></li>
-        <li><a href="misc/misc.html">Miscellaneous notes</a></li>
+    <div class="two-column">
+      <section class="card" aria-labelledby="education-title">
+        <h2 id="education-title">Education</h2>
+        <div class="entry">
+          <h3>Seoul National University</h3>
+          <p>M.A. in Economics</p>
+          <p class="meta">March 2025 - present</p>
+          <p class="entry-description">Admitted with distinction</p>
+        </div>
+        <div class="entry">
+          <h3>Seoul National University</h3>
+          <p>B.A. in Economics; B.S. in Mathematics</p>
+          <p class="meta">February 2025</p>
+          <p class="entry-description">Economics: summa cum laude<br>Combined minor in Financial Economics</p>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="experience-title">
+        <h2 id="experience-title">Research Experience</h2>
+        <div class="entry">
+          <h3>Research Assistant</h3>
+          <p class="meta">March 2025 - present</p>
+          <p>For Youjin Hahn, Jisoo Hwang, and Hyuncheol Bryant Kim</p>
+          <p class="entry-description">Policy evaluation of Korea's couple-based parental leave incentives using National Health Insurance Service administrative data. Contributions include sample construction, identification and inference strategies, empirical analysis, and report writing.</p>
+        </div>
+        <div class="entry">
+          <h3>Health-Family-Labor Economics Research Team</h3>
+          <p class="meta">December 2024 - present</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="card" aria-labelledby="teaching-title">
+      <h2 id="teaching-title">Teaching</h2>
+      <ul class="teaching-list">
+        <li><span>Teaching Assistant, Introductory Statistics for Economists</span><span class="meta">Fall 2026</span></li>
+        <li><span>Teaching Assistant, Interdisciplinary Seminar in Social Sciences</span><span class="meta">Fall 2026</span></li>
+        <li><span>Instructor, Code Camp for First-year SNU PhD Students<br><span class="meta">Introduction to data analysis with R</span></span><span class="meta">February 2026</span></li>
+        <li><span>Teaching Assistant, Mathematics for Economics</span><span class="meta">Spring 2025</span></li>
       </ul>
     </section>
-
     <footer>
-      © <span id="year"></span> Ryu Myeonggyu. All rights reserved.
+      <p><a href="mailto:rmg0105@snu.ac.kr">rmg0105@snu.ac.kr</a></p>
+      <p>Updated November 2026 &middot; &copy; <span id="year">2026</span> Myeonggyu Ryu</p>
     </footer>
   </main>
-
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
     const toggle = document.getElementById('themeToggle');
     const root = document.documentElement;
-
-    const applyTheme = (mode) => {
-      if (mode === 'light') {
-        root.setAttribute('data-theme', 'light');
-        const lightVars = {
-          '--bg': '#f7f8fb', '--bg-soft': '#ffffff', '--card': '#ffffff', '--text': '#0f172a', '--muted': '#475569', '--brand': '#3b82f6', '--brand-2': '#7c3aed', '--badge-bg': 'rgba(59,130,246,0.1)', '--shadow': '0 10px 25px rgba(2,6,23,0.08)'
-        };
-        for (const k in lightVars) root.style.setProperty(k, lightVars[k]);
-      } else {
-        root.setAttribute('data-theme', 'dark');
-        const darkVars = {
-          '--bg': '#0b1020', '--bg-soft': '#111631', '--card': '#151a3a', '--text': '#f5f7ff', '--muted': '#c5cae9', '--brand': '#7aa2ff', '--brand-2': '#a78bfa', '--badge-bg': 'rgba(122,162,255,0.2)', '--shadow': '0 10px 30px rgba(0,0,0,0.35)'
-        };
-        for (const k in darkVars) root.style.setProperty(k, darkVars[k]);
-      }
+    const updateToggle = () => {
+      const label = root.dataset.theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
+      toggle.setAttribute('aria-label', label);
+      toggle.title = label;
     };
-
-    const saved = localStorage.getItem('theme');
-    if (saved) applyTheme(saved);
-
+    toggle.hidden = false;
+    updateToggle();
     toggle.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme');
-      const next = (current === 'light') ? 'dark' : 'light';
-      localStorage.setItem('theme', next);
-      applyTheme(next);
+      const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+      root.dataset.theme = next;
+      try { localStorage.setItem('theme', next); } catch (_) {}
+      updateToggle();
     });
   </script>
 </body>
