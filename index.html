@@ -111,19 +111,31 @@
     .paper-summary { max-width: 900px; color: var(--muted); }
     .paper-links { margin-top: 14px; }
     .paper-links a { font-weight: 600; }
-    .research-figure { margin: 24px 0 20px; padding: 20px; background: #fff; color: #0f172a; border: 1px solid var(--border); border-radius: 12px; }
-    .research-figure h4 { margin: 0 0 8px; color: #0f172a; font-size: 19px; line-height: 1.4; }
-    .figure-subtitle { margin: 0 0 16px; color: #475569; font-size: 14px; line-height: 1.6; }
-    .figure-panels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+    .figure-toggle { margin: 16px 0 0; }
+    .figure-toggle-control { display: inline-flex; align-items: center; min-height: 40px; padding: 7px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--badge-bg); color: var(--brand); font-size: 14px; font-weight: 600; cursor: pointer; list-style: none; }
+    .figure-toggle-control::-webkit-details-marker { display: none; }
+    .figure-toggle-control::marker { content: ""; }
+    .figure-toggle-control:hover { text-decoration: underline; text-underline-offset: .2em; }
+    .figure-toggle-control:focus-visible { outline: 3px solid var(--brand); outline-offset: 4px; }
+    .figure-toggle .when-open { display: none; }
+    .figure-toggle[open] .when-closed { display: none; }
+    .figure-toggle[open] .when-open { display: inline; }
+    .research-figure { width: 100%; max-width: 760px; margin: 16px auto 0; padding: 16px; background: #fff; color: #0f172a; border: 1px solid var(--border); border-radius: 12px; }
+    .research-figure h4 { margin: 0 0 6px; color: #0f172a; font-size: 18px; line-height: 1.4; }
+    .figure-subtitle { margin: 0 0 12px; color: #475569; font-size: 14px; line-height: 1.6; }
+    .figure-panels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
     .figure-panels a { display: block; min-width: 0; border-radius: 4px; }
     .figure-panels img { display: block; width: 100%; height: auto; }
-    .figure-caption { margin-top: 14px; color: #475569; font-size: 14px; line-height: 1.65; }
+    .figure-caption { margin-top: 10px; color: #475569; font-size: 14px; line-height: 1.65; }
     .figure-caption a { color: #245dcc; }
     .figure-caption .source { display: block; margin-top: 6px; }
-    @media (max-width: 700px) { .figure-panels { grid-template-columns: 1fr; gap: 24px; } }
+    @media (max-width: 700px) {
+      .figure-panels { grid-template-columns: 1fr; gap: 18px; }
+      .figure-panels a { width: 100%; max-width: 300px; margin-inline: auto; }
+    }
     @media (max-width: 640px) {
-      .research-figure { margin-inline: -12px; padding: 16px 2px; }
-      .figure-header, .figure-caption { margin-inline: 12px; }
+      .research-figure { padding: 14px 2px; }
+      .figure-header, .figure-caption { margin-inline: 10px; }
     }
     .teaching-list { list-style: none; padding: 0; margin: 0; }
     .teaching-list li { display: flex; justify-content: space-between; gap: 20px; padding: 12px 0; border-top: 1px solid var(--border); }
@@ -202,24 +214,30 @@
         <h3>High Wage Workers, High Wage Firms, and Spousal Sorting</h3>
         <p class="paper-meta">with Jungmin Lee</p>
         <p class="paper-summary">Using linked employer-employee and population data from South Korea, we study assortative mating on worker earnings potential and firm wage premiums. Spouses sort positively on both components, even among couples who have never worked at the same firm. A transferable-utility matching model implies that, without firm-related complementarities, the Gini coefficient of predicted household earnings would be 6.2 percent lower.</p>
-        <figure class="research-figure" aria-labelledby="firm-sorting-title" aria-describedby="firm-sorting-caption">
-          <div class="figure-header">
-            <h4 id="firm-sorting-title">Spouses sort on firm wage premiums</h4>
-            <p class="figure-subtitle">The pattern persists among couples who have never worked at the same firm.</p>
-          </div>
-          <div class="figure-panels">
-            <a href="images/firm_sorting_all.svg" target="_blank" rel="noopener" aria-label="Enlarge the all-couples panel">
-              <img src="images/firm_sorting_all.svg" width="480" height="500" alt="All couples: spouses with similar firm wage premium quintiles are more common than expected under independent matching." loading="lazy" decoding="async">
-            </a>
-            <a href="images/firm_sorting_never_same.svg" target="_blank" rel="noopener" aria-label="Enlarge the never-same-firm panel">
-              <img src="images/firm_sorting_never_same.svg" width="480" height="500" alt="Couples who never worked at the same firm: the matching pattern on similar firm wage premium quintiles persists." loading="lazy" decoding="async">
-            </a>
-          </div>
-          <figcaption class="figure-caption" id="firm-sorting-caption">
-            Cell values show observed couples relative to expected counts under independent matching. Red indicates more couples than expected; blue indicates fewer. A value of 1 denotes the benchmark. Quintiles use premarital firm effects, from 1 (lowest) to 5 (highest).
-            <span class="source">Source: Lee and Ryu (2026), <a href="pdfs/Writing_Sample.pdf?v=7c415629f36f#page=10" target="_blank" rel="noopener">Figure 1</a>.</span>
-          </figcaption>
-        </figure>
+        <details class="figure-toggle" id="firm-sorting-toggle">
+          <summary class="figure-toggle-control">
+            <span class="when-closed">Show figure</span>
+            <span class="when-open">Hide figure</span>
+          </summary>
+          <figure class="research-figure" aria-labelledby="firm-sorting-title" aria-describedby="firm-sorting-caption">
+            <div class="figure-header">
+              <h4 id="firm-sorting-title">Spouses sort on firm wage premiums</h4>
+              <p class="figure-subtitle">The pattern persists among couples who have never worked at the same firm.</p>
+            </div>
+            <div class="figure-panels">
+              <a href="images/firm_sorting_all.svg" target="_blank" rel="noopener" aria-label="Enlarge the all-couples panel">
+                <img src="images/firm_sorting_all.svg" width="480" height="500" alt="All couples: spouses with similar firm wage premium quintiles are more common than expected under independent matching." loading="lazy" decoding="async">
+              </a>
+              <a href="images/firm_sorting_never_same.svg" target="_blank" rel="noopener" aria-label="Enlarge the never-same-firm panel">
+                <img src="images/firm_sorting_never_same.svg" width="480" height="500" alt="Couples who never worked at the same firm: the matching pattern on similar firm wage premium quintiles persists." loading="lazy" decoding="async">
+              </a>
+            </div>
+            <figcaption class="figure-caption" id="firm-sorting-caption">
+              Cell values show observed couples relative to expected counts under independent matching. Red indicates more couples than expected; blue indicates fewer. A value of 1 denotes the benchmark. Quintiles use premarital firm effects, from 1 (lowest) to 5 (highest).
+              <span class="source">Source: Lee and Ryu (2026), <a href="pdfs/Writing_Sample.pdf?v=7c415629f36f#page=10" target="_blank" rel="noopener">Figure 1</a>.</span>
+            </figcaption>
+          </figure>
+        </details>
         <p class="paper-links"><a href="pdfs/Writing_Sample.pdf?v=7c415629f36f" target="_blank" rel="noopener">Draft</a></p>
       </article>
       <article class="paper">
