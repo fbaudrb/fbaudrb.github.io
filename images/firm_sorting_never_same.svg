@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="500" viewBox="0 0 480 500" role="img" aria-labelledby="never-same-firm-title never-same-firm-description">
+<title id="never-same-firm-title">Never worked at the same firm</title>
+<desc id="never-same-firm-description">Observed relative to expected couples under independent matching, by spouses' premarital firm wage premium quintiles. Both axes range from 1, lowest, to 5, highest. Source: Lee and Ryu (2026), Figure 1.</desc>
+<defs><linearGradient id="never-same-firm-scale" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#2166ac"/><stop offset=".5" stop-color="#f7f7f7"/><stop offset="1" stop-color="#b2182b"/></linearGradient></defs>
+<rect width="480" height="500" fill="#fff"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#0f172a">
+<text x="220" y="33" text-anchor="middle" font-size="24" font-weight="700">Never worked at the same firm</text>
+<text x="220" y="67" text-anchor="middle" font-size="22" fill="#475569">N = 133,280</text>
+<rect x="65" y="348" width="62" height="62" fill="#e0adb3" stroke="#fff" stroke-width="1.2"/>
+<text x="96" y="387" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="1.53">1.53</text>
+<rect x="127" y="348" width="62" height="62" fill="#efdddf" stroke="#fff" stroke-width="1.2"/>
+<text x="158" y="387" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="1.19">1.19</text>
+<rect x="189" y="348" width="62" height="62" fill="#f5f0f1" stroke="#fff" stroke-width="1.2"/>
+<text x="220" y="387" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="1.05">1.05</text>
+<rect x="251" y="348" width="62" height="62" fill="#eef1f4" stroke="#fff" stroke-width="1.2"/>
+<text x="282" y="387" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="0.96">0.96</text>
+<rect x="313" y="348" width="62" height="62" fill="#c8d7e7" stroke="#fff" stroke-width="1.2"/>
+<text x="344" y="387" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="0.78">0.78</text>
+<rect x="65" y="286" width="62" height="62" fill="#f0e1e3" stroke="#fff" stroke-width="1.2"/>
+<text x="96" y="325" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="1.16">1.16</text>
+<rect x="127" y="286" width="62" height="62" fill="#eedbde" stroke="#fff" stroke-width="1.2"/>
+<text x="158" y="325" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="1.20">1.20</text>
+<rect x="189" y="286" width="62" height="62" fill="#f4eced" stroke="#fff" stroke-width="1.2"/>
+<text x="220" y="325" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="1.08">1.08</text>
+<rect x="251" y="286" width="62" height="62" fill="#f1f3f5" stroke="#fff" stroke-width="1.2"/>
+<text x="282" y="325" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="0.97">0.97</text>
+<rect x="313" y="286" width="62" height="62" fill="#d5e0eb" stroke="#fff" stroke-width="1.2"/>
+<text x="344" y="325" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="0.84">0.84</text>
+<rect x="65" y="224" width="62" height="62" fill="#e8edf2" stroke="#fff" stroke-width="1.2"/>
+<text x="96" y="263" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="0.93">0.93</text>
+<rect x="127" y="224" width="62" height="62" fill="#f7f7f7" stroke="#fff" stroke-width="1.2"/>
+<text x="158" y="263" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="1.00">1.00</text>
+<rect x="189" y="224" width="62" height="62" fill="#f4edee" stroke="#fff" stroke-width="1.2"/>
+<text x="220" y="263" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="1.07">1.07</text>
+<rect x="251" y="224" width="62" height="62" fill="#f7f6f6" stroke="#fff" stroke-width="1.2"/>
+<text x="282" y="263" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="1.01">1.01</text>
+<rect x="313" y="224" width="62" height="62" fill="#eef1f4" stroke="#fff" stroke-width="1.2"/>
+<text x="344" y="263" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="0.96">0.96</text>
+<rect x="65" y="162" width="62" height="62" fill="#c6d6e6" stroke="#fff" stroke-width="1.2"/>
+<text x="96" y="201" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="0.77">0.77</text>
+<rect x="127" y="162" width="62" height="62" fill="#d3deea" stroke="#fff" stroke-width="1.2"/>
+<text x="158" y="201" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="0.83">0.83</text>
+<rect x="189" y="162" width="62" height="62" fill="#e8edf2" stroke="#fff" stroke-width="1.2"/>
+<text x="220" y="201" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="0.93">0.93</text>
+<rect x="251" y="162" width="62" height="62" fill="#f3eaec" stroke="#fff" stroke-width="1.2"/>
+<text x="282" y="201" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="1.09">1.09</text>
+<rect x="313" y="162" width="62" height="62" fill="#f3e9ea" stroke="#fff" stroke-width="1.2"/>
+<text x="344" y="201" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="1.10">1.10</text>
+<rect x="65" y="100" width="62" height="62" fill="#a6c0db" stroke="#fff" stroke-width="1.2"/>
+<text x="96" y="139" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="0.62">0.62</text>
+<rect x="127" y="100" width="62" height="62" fill="#b0c7de" stroke="#fff" stroke-width="1.2"/>
+<text x="158" y="139" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="0.67">0.67</text>
+<rect x="189" y="100" width="62" height="62" fill="#c4d4e5" stroke="#fff" stroke-width="1.2"/>
+<text x="220" y="139" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="0.76">0.76</text>
+<rect x="251" y="100" width="62" height="62" fill="#eef1f4" stroke="#fff" stroke-width="1.2"/>
+<text x="282" y="139" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="0.96">0.96</text>
+<rect x="313" y="100" width="62" height="62" fill="#e3b7bc" stroke="#fff" stroke-width="1.2"/>
+<text x="344" y="139" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a" data-ratio="1.46">1.46</text>
+<text x="96" y="439" text-anchor="middle" font-size="24">1</text>
+<text x="49" y="387" text-anchor="end" font-size="24">1</text>
+<text x="158" y="439" text-anchor="middle" font-size="24">2</text>
+<text x="49" y="325" text-anchor="end" font-size="24">2</text>
+<text x="220" y="439" text-anchor="middle" font-size="24">3</text>
+<text x="49" y="263" text-anchor="end" font-size="24">3</text>
+<text x="282" y="439" text-anchor="middle" font-size="24">4</text>
+<text x="49" y="201" text-anchor="end" font-size="24">4</text>
+<text x="344" y="439" text-anchor="middle" font-size="24">5</text>
+<text x="49" y="139" text-anchor="end" font-size="24">5</text>
+<text x="220" y="478" text-anchor="middle" font-size="23">Husband's firm-premium quintile</text>
+<text x="20" y="255" text-anchor="middle" font-size="23" transform="rotate(-90 20 255)">Wife's firm-premium quintile</text>
+<rect x="411" y="100" width="16" height="310" fill="url(#never-same-firm-scale)"/>
+<text x="437" y="417.00" font-size="22">0.0</text>
+<text x="437" y="339.50" font-size="22">0.5</text>
+<text x="437" y="262.00" font-size="22">1.0</text>
+<text x="437" y="213.56" font-size="22">1.5</text>
+<text x="437" y="165.13" font-size="22">2.0</text>
+<text x="437" y="116.69" font-size="22">2.5</text>
+</g></svg>
